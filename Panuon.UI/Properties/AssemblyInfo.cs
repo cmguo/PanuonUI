@@ -10,10 +10,10 @@ using System.Windows;
 [assembly: AssemblyTitle("Panuon.UI")]
 [assembly: AssemblyDescription("A wpf custom control library")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Panuon")]
 [assembly: AssemblyProduct("Panuon.UI")]
 [assembly: AssemblyCopyright("Copyright ©Panuon 2016-2018")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("Panuon")]
 [assembly: AssemblyCulture("")]
 
 //将 ComVisible 设置为 false 将使此程序集中的类型
