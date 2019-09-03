@@ -15,6 +15,19 @@ namespace Panuon.UI
 {
     public class PUWindow : Window
     {
+      
+        public static readonly DependencyProperty NavTitleBarVisibilityProperty =
+            DependencyProperty.RegisterAttached("NavTitleBarVisibility", typeof(Visibility), typeof(PUWindow));
+
+        public static Visibility GetNavTitleBarVisibility(DependencyObject o)
+        {
+            return (Visibility) o.GetValue(NavTitleBarVisibilityProperty);
+        }
+        public static void SetNavTitleBarVisibility(DependencyObject o, Visibility v)
+        {
+           o.SetValue(NavTitleBarVisibilityProperty,v);
+        }
+
         #region Import
         [DllImport("user32.dll")]
         static extern IntPtr GetForegroundWindow();
@@ -69,6 +82,10 @@ namespace Panuon.UI
             catch (Exception ex) { }
 
             PreviewMouseMove += OnPreviewMouseMove;
+
+            CommandBindings.Add(new CommandBinding(ApplicationCommands.Close, 
+                (s, e) => CloseCommand.Execute(this), 
+                (s, e) => e.CanExecute = CloseCommand.CanExecute(this)));
         }
         #endregion
 
@@ -643,13 +660,19 @@ namespace Panuon.UI
             var visibility = new Binding() { Path = new PropertyPath("NavButtonVisibility"), UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged, Source = this, Mode = BindingMode.OneWay };
             BindingOperations.SetBinding(btn, VisibilityProperty, visibility);
 
-            var width = new Binding() { Path = new PropertyPath("NavButtonWidth"), UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged, Source = this, Mode = BindingMode.OneWay };
-            BindingOperations.SetBinding(btn, WidthProperty, width);
-            var height = new Binding() { Path = new PropertyPath("NavButtonHeight"), UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged, Source = this, Mode = BindingMode.OneWay };
-            BindingOperations.SetBinding(btn, HeightProperty, height);
             var fontsize = new Binding() { Path = new PropertyPath("FontSize"), UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged, Source = this, Mode = BindingMode.OneWay };
             BindingOperations.SetBinding(btn, FontSizeProperty, fontsize);
             btn.Click += clickHandler;
+            AppendNavButton(btn);
+        }
+
+        public void RemoveNavButton(UIElement btn)
+        {
+            _stkNav.Children.Remove(btn);
+        }
+
+        public void AppendNavButton(UIElement btn)
+        {
             if (IsLoaded)
                 _stkNav.Children.Insert(0, btn);
             else
@@ -660,6 +683,21 @@ namespace Panuon.UI
                 };
             }
         }
+
+        public PUButton GetNavButton(string name)
+        {
+            name = "btn" + name;
+            foreach (UIElement e in _stkNav.Children)
+            {
+                PUButton b = e as PUButton;
+                if (b == null)
+                    continue;
+                if (b.Name == name)
+                    return b;
+            }
+            return null;
+        }
+
         #endregion
 
         #region Function

@@ -1,0 +1,29 @@
+From d3315b97302f153f3438eefb4c580e10ec4e15e9 Mon Sep 17 00:00:00 2001
+From: 86183 <86183@DESKTOP-SABKKDC>
+Date: Thu, 18 Jul 2019 17:05:20 +0800
+Subject: [PATCH] =?UTF-8?q?fix:=E4=BF=AE=E5=A4=8DTextBlock=E8=B6=85?=
+ =?UTF-8?q?=E9=95=BF=E5=88=A4=E6=96=AD=E9=94=99=E8=AF=AF?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ Panuon.UI/Z_Others/Converters.cs | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Panuon.UI/Z_Others/Converters.cs b/Panuon.UI/Z_Others/Converters.cs
+index 6704860..8d49206 100644
+--- a/Panuon.UI/Z_Others/Converters.cs
++++ b/Panuon.UI/Z_Others/Converters.cs
+@@ -395,7 +395,7 @@ namespace Panuon.UI
+             }
+             else
+             {
+-                return Visibility.Visible;
++                return Visibility.Collapsed;
+             }
+         }
+ 
+-- 
+2.21.0.windows.1
+

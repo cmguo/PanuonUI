@@ -1,0 +1,32 @@
+From 6693b837c35063a8637ff21e1f32c480fc2874ef Mon Sep 17 00:00:00 2001
+From: guochunmao <guochunmao@100tal.com>
+Date: Wed, 17 Jul 2019 15:49:17 +0800
+Subject: [PATCH] remove lang version 7.3
+
+---
+ Panuon.UI/Panuon.UI.csproj | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/Panuon.UI/Panuon.UI.csproj b/Panuon.UI/Panuon.UI.csproj
+index 5126e13..1ef3c1e 100644
+--- a/Panuon.UI/Panuon.UI.csproj
++++ b/Panuon.UI/Panuon.UI.csproj
+@@ -23,7 +23,6 @@
+     <ErrorReport>prompt</ErrorReport>
+     <WarningLevel>4</WarningLevel>
+     <Prefer32Bit>false</Prefer32Bit>
+-    <LangVersion>7.3</LangVersion>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+     <DebugType>pdbonly</DebugType>
+@@ -33,7 +32,6 @@
+     <ErrorReport>prompt</ErrorReport>
+     <WarningLevel>4</WarningLevel>
+     <Prefer32Bit>false</Prefer32Bit>
+-    <LangVersion>7.3</LangVersion>
+   </PropertyGroup>
+   <ItemGroup>
+     <Reference Include="System" />
+-- 
+2.21.0.windows.1
+

@@ -1,0 +1,53 @@
+From 2a88fbf3c97eb9c8312278a0dfc3ea4ffeda6e51 Mon Sep 17 00:00:00 2001
+From: guochunmao <guochunmao@100tal.com>
+Date: Fri, 19 Jul 2019 19:19:55 +0800
+Subject: [PATCH] check scan device
+
+---
+ Panuon.UI/Panuon.UI.csproj                 | 2 +-
+ Panuon.UI/Properties/Resources.Designer.cs | 2 +-
+ Panuon.UI/Properties/Settings.Designer.cs  | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/Panuon.UI/Panuon.UI.csproj b/Panuon.UI/Panuon.UI.csproj
+index 1ef3c1e..8d019af 100644
+--- a/Panuon.UI/Panuon.UI.csproj
++++ b/Panuon.UI/Panuon.UI.csproj
+@@ -8,7 +8,7 @@
+     <OutputType>library</OutputType>
+     <RootNamespace>Panuon.UI</RootNamespace>
+     <AssemblyName>Panuon.UI</AssemblyName>
+-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
++    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+     <FileAlignment>512</FileAlignment>
+     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+     <WarningLevel>4</WarningLevel>
+diff --git a/Panuon.UI/Properties/Resources.Designer.cs b/Panuon.UI/Properties/Resources.Designer.cs
+index cc0124f..db465c1 100644
+--- a/Panuon.UI/Properties/Resources.Designer.cs
++++ b/Panuon.UI/Properties/Resources.Designer.cs
+@@ -19,7 +19,7 @@ namespace Panuon.UI.Properties {
+     // 类通过类似于 ResGen 或 Visual Studio 的工具自动生成的。
+     // 若要添加或移除成员，请编辑 .ResX 文件，然后重新运行 ResGen
+     // (以 /str 作为命令选项)，或重新生成 VS 项目。
+-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
++    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+     internal class Resources {
+diff --git a/Panuon.UI/Properties/Settings.Designer.cs b/Panuon.UI/Properties/Settings.Designer.cs
+index 5704750..de5446a 100644
+--- a/Panuon.UI/Properties/Settings.Designer.cs
++++ b/Panuon.UI/Properties/Settings.Designer.cs
+@@ -12,7 +12,7 @@ namespace Panuon.UI.Properties {
+     
+     
+     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.1.0.0")]
++    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
+     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+         
+         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
+-- 
+2.21.0.windows.1
+

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
 
@@ -259,7 +260,7 @@ namespace Panuon.UI
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             //0是Header，1是Title
-            return (string)values[0] == null ? (string)values[1]: (string)values[0];
+            return values[0] == null ? (string)values[1]: values[0];
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
@@ -375,4 +376,57 @@ namespace Panuon.UI
             return new object[] { DependencyProperty.UnsetValue, DependencyProperty.UnsetValue };
         }
     }
+
+    public class TrimmedTextBlockVisibilityConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if (value == null)
+            {
+                return Visibility.Collapsed;
+            }
+
+            TextBlock textBlock = (TextBlock)value;
+            bool isTrim = IsTextTrimmed(textBlock);
+
+            if (isTrim)
+            {
+                return Visibility.Visible;
+            }
+            else
+            {
+                return Visibility.Collapsed;
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 判断当前显示的内容是否显示不全被截断
+        /// </summary>
+        /// <param name="textBlock"></param>
+        /// <returns></returns>
+        private bool IsTextTrimmed(TextBlock textBlock)
+        {
+            Typeface typeface = new Typeface(
+                textBlock.FontFamily,
+                textBlock.FontStyle,
+                textBlock.FontWeight,
+                textBlock.FontStretch);
+
+            FormattedText formattedText = new FormattedText(
+                textBlock.Text,
+                System.Threading.Thread.CurrentThread.CurrentCulture,
+                textBlock.FlowDirection,
+                typeface,
+                textBlock.FontSize,
+                textBlock.Foreground);
+            bool isTrimmed = formattedText.Width > textBlock.Width - textBlock.Padding.Left - textBlock.Padding.Right;
+            return isTrimmed;
+        }
+    }
+
 }

@@ -1,0 +1,34 @@
+From 3d426b97a02b3be5bee1ecaf0f71a367d5583f37 Mon Sep 17 00:00:00 2001
+From: guochunmao <guochunmao@100tal.com>
+Date: Tue, 6 Aug 2019 14:36:51 +0800
+Subject: [PATCH] visual fix
+
+---
+ Panuon.UI/Themes/Generic.xaml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/Panuon.UI/Themes/Generic.xaml b/Panuon.UI/Themes/Generic.xaml
+index 7b5ace8..9987ce6 100644
+--- a/Panuon.UI/Themes/Generic.xaml
++++ b/Panuon.UI/Themes/Generic.xaml
+@@ -2545,7 +2545,7 @@
+                                                     Text="{Binding Watermark,RelativeSource={RelativeSource AncestorType=TextBox}}"
+                                                     VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                     HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+-                                                    Opacity="0.6" />
++                                                    Opacity="0.25" />
+                                         <local:PUButton x:Name="btnClear"
+                                                         ButtonStyle="Link"
+                                                         Visibility="Collapsed"
+@@ -2801,7 +2801,7 @@
+                                                     Text="{Binding Watermark,RelativeSource={RelativeSource AncestorType=TextBox}}"
+                                                     VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                     HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+-                                                    Opacity="0.6" />
++                                                    Opacity="0.25" />
+                                         <local:PUButton x:Name="btnShowPwd"
+                                                         ButtonStyle="Link"
+                                                         Opacity="0"
+-- 
+2.21.0.windows.1
+

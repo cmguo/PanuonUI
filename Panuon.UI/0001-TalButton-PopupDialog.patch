@@ -1,0 +1,24 @@
+From 4da38ca98a1bbd0b3709278d95558a9ca77d083b Mon Sep 17 00:00:00 2001
+From: guochunmao <guochunmao@100tal.com>
+Date: Tue, 9 Jul 2019 21:12:43 +0800
+Subject: [PATCH] TalButton & PopupDialog
+
+---
+ Panuon.UI/Themes/Generic.xaml | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/Panuon.UI/Themes/Generic.xaml b/Panuon.UI/Themes/Generic.xaml
+index eb6e938..b756c1c 100644
+--- a/Panuon.UI/Themes/Generic.xaml
++++ b/Panuon.UI/Themes/Generic.xaml
+@@ -1650,6 +1650,7 @@
+                                             CornerRadius="{Binding BorderCornerRadius,RelativeSource={RelativeSource AncestorType=Button}}" />
+                                 </Border>
+                                 <Border x:Name="bdrHoverCover"
++                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                         Background="{Binding CoverBrush,RelativeSource={RelativeSource AncestorType=Button}}"
+                                         CornerRadius="{Binding BorderCornerRadius,RelativeSource={RelativeSource AncestorType=Button}}"
+                                         Opacity="0"></Border>
+-- 
+2.21.0.windows.1
+

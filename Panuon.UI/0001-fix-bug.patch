@@ -1,0 +1,84 @@
+From 6f462294f4747b6abd27eb511194a0392c8ebc3c Mon Sep 17 00:00:00 2001
+From: guochunmao <guochunmao@100tal.com>
+Date: Mon, 15 Jul 2019 18:44:16 +0800
+Subject: [PATCH] fix bug
+
+---
+ Panuon.UI/Themes/Generic.xaml | 47 +----------------------------------
+ 1 file changed, 1 insertion(+), 46 deletions(-)
+
+diff --git a/Panuon.UI/Themes/Generic.xaml b/Panuon.UI/Themes/Generic.xaml
+index b756c1c..7b5ace8 100644
+--- a/Panuon.UI/Themes/Generic.xaml
++++ b/Panuon.UI/Themes/Generic.xaml
+@@ -2568,29 +2568,6 @@
+                                             Property="Visibility"
+                                             Value="Visible" />
+                                 </Trigger>
+-                                <Trigger Property="IsFocused"
+-                                         Value="True">
+-                                    <Trigger.EnterActions>
+-                                        <BeginStoryboard>
+-                                            <Storyboard>
+-                                                <DoubleAnimation To="0.4"
+-                                                                 Duration="0:0:0.2"
+-                                                                 Storyboard.TargetName="effect"
+-                                                                 Storyboard.TargetProperty="Opacity" />
+-                                            </Storyboard>
+-                                        </BeginStoryboard>
+-                                    </Trigger.EnterActions>
+-                                    <Trigger.ExitActions>
+-                                        <BeginStoryboard>
+-                                            <Storyboard>
+-                                                <DoubleAnimation To="0"
+-                                                                 Duration="0:0:0.2"
+-                                                                 Storyboard.TargetName="effect"
+-                                                                 Storyboard.TargetProperty="Opacity" />
+-                                            </Storyboard>
+-                                        </BeginStoryboard>
+-                                    </Trigger.ExitActions>
+-                                </Trigger>
+                                 <Trigger Property="Text"
+                                          Value="">
+                                     <Setter Property="Visibility"
+@@ -2828,6 +2805,7 @@
+                                         <local:PUButton x:Name="btnShowPwd"
+                                                         ButtonStyle="Link"
+                                                         Opacity="0"
++                                                        Focusable="False"
+                                                         Visibility="Collapsed"
+                                                         FontFamily="{DynamicResource IconFont}"
+                                                         Content=""
+@@ -2848,29 +2826,6 @@
+                                             Property="Visibility"
+                                             Value="Visible" />
+                                 </Trigger>
+-                                <Trigger Property="IsFocused"
+-                                         Value="True">
+-                                    <Trigger.EnterActions>
+-                                        <BeginStoryboard>
+-                                            <Storyboard>
+-                                                <DoubleAnimation To="0.4"
+-                                                                 Duration="0:0:0.2"
+-                                                                 Storyboard.TargetName="effect"
+-                                                                 Storyboard.TargetProperty="Opacity" />
+-                                            </Storyboard>
+-                                        </BeginStoryboard>
+-                                    </Trigger.EnterActions>
+-                                    <Trigger.ExitActions>
+-                                        <BeginStoryboard>
+-                                            <Storyboard>
+-                                                <DoubleAnimation To="0"
+-                                                                 Duration="0:0:0.2"
+-                                                                 Storyboard.TargetName="effect"
+-                                                                 Storyboard.TargetProperty="Opacity" />
+-                                            </Storyboard>
+-                                        </BeginStoryboard>
+-                                    </Trigger.ExitActions>
+-                                </Trigger>
+                                 <Trigger Property="Text"
+                                          Value="">
+                                     <Setter Property="Visibility"
+-- 
+2.21.0.windows.1
+
